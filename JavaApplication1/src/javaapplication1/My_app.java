@@ -4,8 +4,8 @@
  */
 package javaapplication1;
 
+import dataBase.DB;
 import login.loginFrame;
-
 import home.HomeFrame;
 
 /**
@@ -16,10 +16,12 @@ public class My_app {
     
     public static void main(String[]args){
  
-//        loginFrame loginObj = new loginFrame();
-//        loginObj.setVisible(true);
-          HomeFrame homeObj = new HomeFrame();
-          homeObj.setVisible(true);
+        loginFrame loginObj = new loginFrame();
+        loginObj.setVisible(true);
+//          HomeFrame homeObj = new HomeFrame();
+//          homeObj.setVisible(true);
+          
+         DB.loadConnection();
 }
     
 }

@@ -4,6 +4,7 @@
  */
 package login;
 
+import home.HomeFrame;
 import java.awt.Toolkit;
 
 /**
@@ -46,10 +47,10 @@ public class loginFrame extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jUserName = new javax.swing.JTextField();
+        jPassword = new javax.swing.JPasswordField();
+        jSignup = new javax.swing.JButton();
+        jLogin = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -97,45 +98,45 @@ public class loginFrame extends javax.swing.JFrame {
         jLabel4.setText("User Name");
         jPanel4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 50, -1, 40));
 
-        jTextField1.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
-        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jUserName.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
+        jUserName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)));
+        jUserName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jUserNameActionPerformed(evt);
             }
         });
-        jPanel4.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 300, 30));
+        jPanel4.add(jUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 300, 30));
 
-        jPasswordField1.setFont(new java.awt.Font("Stencil", 1, 18)); // NOI18N
-        jPasswordField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)));
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        jPassword.setFont(new java.awt.Font("Stencil", 1, 18)); // NOI18N
+        jPassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)));
+        jPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+                jPasswordActionPerformed(evt);
             }
         });
-        jPanel4.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 300, 30));
+        jPanel4.add(jPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 300, 30));
 
-        jButton1.setBackground(new java.awt.Color(0, 153, 153));
-        jButton1.setFont(new java.awt.Font("Stencil", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("SIGNUP");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jSignup.setBackground(new java.awt.Color(0, 153, 153));
+        jSignup.setFont(new java.awt.Font("Stencil", 1, 18)); // NOI18N
+        jSignup.setForeground(new java.awt.Color(255, 255, 255));
+        jSignup.setText("SIGNUP");
+        jSignup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jSignupActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 130, 30));
+        jPanel4.add(jSignup, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 130, 30));
 
-        jButton2.setBackground(new java.awt.Color(0, 153, 153));
-        jButton2.setFont(new java.awt.Font("Stencil", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("LOGIN");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jLogin.setBackground(new java.awt.Color(0, 153, 153));
+        jLogin.setFont(new java.awt.Font("Stencil", 1, 18)); // NOI18N
+        jLogin.setForeground(new java.awt.Color(255, 255, 255));
+        jLogin.setText("LOGIN");
+        jLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jLoginActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 130, 30));
+        jPanel4.add(jLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 130, 30));
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 440, 210));
 
@@ -145,24 +146,41 @@ public class loginFrame extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jUserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUserNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jUserNameActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jSignupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSignupActionPerformed
         // TODO add your handling code here:
         this.hide();
        signupObj.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jSignupActionPerformed
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void jPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_jPasswordActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+    private void jLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLoginActionPerformed
+        // login for the employees;
+        // get data feom inputs
+        
+        String userName = jUserName.getText();
+        String password = jPassword.getText();
+        
+        Bal balObj = new Bal();
+       boolean b =  balObj.cheackLogin(userName, password);//this method will return a boolean
        
-    }//GEN-LAST:event_jButton2ActionPerformed
+       if(b){
+       // now we show the homePage
+       this.setVisible(false);
+       HomeFrame homeObj = new HomeFrame();
+       homeObj.setVisible(true);
+       }
+      
+ 
+        
+       
+    }//GEN-LAST:event_jLoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -200,17 +218,16 @@ public class loginFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton jLogin;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JPasswordField jPassword;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
@@ -218,6 +235,7 @@ public class loginFrame extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton jSignup;
+    private javax.swing.JTextField jUserName;
     // End of variables declaration//GEN-END:variables
 }

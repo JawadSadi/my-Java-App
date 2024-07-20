@@ -44,11 +44,11 @@ public class signupFrame extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        jName = new javax.swing.JTextField();
+        jUserName = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        jPassword = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -102,15 +102,15 @@ public class signupFrame extends javax.swing.JFrame {
         jLabel5.setText("Name");
         jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 110, -1));
 
-        jTextField1.setFont(new java.awt.Font("Stencil", 1, 18)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(0, 51, 153));
-        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 153)));
-        jPanel4.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 320, 34));
+        jName.setFont(new java.awt.Font("Stencil", 1, 18)); // NOI18N
+        jName.setForeground(new java.awt.Color(0, 51, 153));
+        jName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 153)));
+        jPanel4.add(jName, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 320, 34));
 
-        jTextField3.setFont(new java.awt.Font("Stencil", 1, 18)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(0, 51, 153));
-        jTextField3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 153)));
-        jPanel4.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 320, 34));
+        jUserName.setFont(new java.awt.Font("Stencil", 1, 18)); // NOI18N
+        jUserName.setForeground(new java.awt.Color(0, 51, 153));
+        jUserName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 153)));
+        jPanel4.add(jUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 320, 34));
 
         jButton1.setBackground(new java.awt.Color(0, 102, 204));
         jButton1.setFont(new java.awt.Font("Stencil", 1, 24)); // NOI18N
@@ -127,11 +127,16 @@ public class signupFrame extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Stencil", 1, 24)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("sIGNUP");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel4.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 140, 30));
 
-        jPasswordField1.setFont(new java.awt.Font("Stencil", 1, 24)); // NOI18N
-        jPasswordField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 204)));
-        jPanel4.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 112, 320, 30));
+        jPassword.setFont(new java.awt.Font("Stencil", 1, 24)); // NOI18N
+        jPassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 204)));
+        jPanel4.add(jPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 112, 320, 30));
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 460, 220));
 
@@ -147,6 +152,19 @@ public class signupFrame extends javax.swing.JFrame {
         loginFrame loginObj = new loginFrame();
         loginObj.show();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // get data from the textfield in signup chart;
+        String fullName = jName.getText();
+        String userN = jUserName.getText();
+        String password = jPassword.getText();
+        
+        Bean beanObj = new Bean(fullName, userN, password);
+        
+     //crate bal class object
+     Bal balObj = new Bal();
+     balObj.insertDataSignup(beanObj);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -191,11 +209,12 @@ public class signupFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JTextField jName;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JPasswordField jPassword;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
@@ -205,7 +224,6 @@ public class signupFrame extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jUserName;
     // End of variables declaration//GEN-END:variables
 }
