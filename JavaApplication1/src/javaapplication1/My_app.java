@@ -18,8 +18,7 @@ public class My_app {
  
         loginFrame loginObj = new loginFrame();
         loginObj.setVisible(true);
-//          HomeFrame homeObj = new HomeFrame();
-//          homeObj.setVisible(true);
+
           
          DB.loadConnection();
 }

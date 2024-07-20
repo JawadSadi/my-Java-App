@@ -4,11 +4,14 @@
  */
 package home;
 
+
 import java.awt.Toolkit;
 import java.util.List;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
+import javax.swing.RowFilter;
 
 /**
  *
@@ -78,8 +81,7 @@ public class HomeFrame extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel9 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jButton2 = new javax.swing.JButton();
+        jFname = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -88,7 +90,6 @@ public class HomeFrame extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jAge = new javax.swing.JTextField();
-        jFname = new javax.swing.JTextField();
         jLastName = new javax.swing.JTextField();
         jCity = new javax.swing.JComboBox<>();
         jGender = new javax.swing.JComboBox<>();
@@ -99,6 +100,7 @@ public class HomeFrame extends javax.swing.JFrame {
         jCleare = new javax.swing.JButton();
         jInsert = new javax.swing.JButton();
         jLname1 = new javax.swing.JTextField();
+        jFname1 = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
@@ -124,31 +126,31 @@ public class HomeFrame extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Stencil", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("select option for reporting/print");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 40, 360, 30));
-        jPanel3.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 290, -1));
+        jLabel2.setText("Search");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 40, 90, 30));
+        jPanel3.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 240, 0));
 
         jLabel9.setFont(new java.awt.Font("Stencil", 1, 24)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("CRUD APPLICATION");
-        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 300, 30));
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 50, 300, 20));
 
-        jComboBox3.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
-        jComboBox3.setForeground(new java.awt.Color(0, 153, 153));
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gender", "City", "Address" }));
-        jComboBox3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)));
-        jPanel3.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 30, 290, 40));
-
-        jButton2.setBackground(new java.awt.Color(0, 0, 0));
-        jButton2.setFont(new java.awt.Font("Stencil", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Print");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jFname.setFont(new java.awt.Font("Stencil", 1, 14)); // NOI18N
+        jFname.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)));
+        jFname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jFnameActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 80, 160, 30));
+        jFname.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jFnameKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jFnameKeyReleased(evt);
+            }
+        });
+        jPanel3.add(jFname, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 30, 320, 40));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1290, 120));
 
@@ -200,15 +202,6 @@ public class HomeFrame extends javax.swing.JFrame {
             }
         });
         jPanel4.add(jAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 360, 40));
-
-        jFname.setFont(new java.awt.Font("Stencil", 1, 14)); // NOI18N
-        jFname.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)));
-        jFname.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFnameActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jFname, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 360, 40));
 
         jLastName.setFont(new java.awt.Font("Stencil", 1, 14)); // NOI18N
         jLastName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)));
@@ -293,6 +286,15 @@ public class HomeFrame extends javax.swing.JFrame {
         });
         jPanel4.add(jLname1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 360, 40));
 
+        jFname1.setFont(new java.awt.Font("Stencil", 1, 14)); // NOI18N
+        jFname1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)));
+        jFname1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFname1ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jFname1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 360, 40));
+
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 510, 450));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -333,10 +335,6 @@ public class HomeFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jAgeActionPerformed
 
-    private void jFnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFnameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jFnameActionPerformed
-
     private void jLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLastNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jLastNameActionPerformed
@@ -348,10 +346,6 @@ public class HomeFrame extends javax.swing.JFrame {
         loadTable();
         clearTextFieldsData();
     }//GEN-LAST:event_jDeleteActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jUbdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUbdateActionPerformed
         String firstname = jFname.getText();
@@ -377,7 +371,7 @@ public class HomeFrame extends javax.swing.JFrame {
     private void jInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jInsertActionPerformed
         // getting the inputs values
         
-        String firstname = jFname.getText();
+        String firstname = jFname1.getText();
         String lastname = jLastName.getText();
         String gender = (String) jGender.getSelectedItem();
         String city = (String) jCity.getSelectedItem();
@@ -420,6 +414,26 @@ public class HomeFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTable1MouseClicked
 
+    private void jFname1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFname1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFname1ActionPerformed
+
+    private void jFnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFnameActionPerformed
+
+    private void jFnameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jFnameKeyPressed
+       
+    }//GEN-LAST:event_jFnameKeyPressed
+
+    private void jFnameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jFnameKeyReleased
+         // Search
+        DefaultTableModel obj = (DefaultTableModel) jTable1.getModel();
+        TableRowSorter<DefaultTableModel> obj1 = new TableRowSorter<>(obj);
+        jTable1.setRowSorter(obj1);
+        obj1.setRowFilter(RowFilter.regexFilter(jFname.getText()));
+    }//GEN-LAST:event_jFnameKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -458,12 +472,11 @@ public class HomeFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea jAddress;
     private javax.swing.JTextField jAge;
-    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jCity;
     private javax.swing.JButton jCleare;
-    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JButton jDelete;
     private javax.swing.JTextField jFname;
+    private javax.swing.JTextField jFname1;
     private javax.swing.JComboBox<String> jGender;
     private javax.swing.JButton jInsert;
     private javax.swing.JLabel jLabel1;

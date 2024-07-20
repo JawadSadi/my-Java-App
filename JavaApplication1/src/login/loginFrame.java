@@ -20,7 +20,7 @@ public class loginFrame extends javax.swing.JFrame {
         initComponents();
         this.setResizable(false);// this make frame fix you can resize it;
         //set a image and Icon here
-        setIconImage(Toolkit.getDefaultToolkit().createImage(getClass().getResource("login-lock.png")));
+        setIconImage(Toolkit.getDefaultToolkit().createImage(getClass().getResource("app.png")));
     }
 
     /**

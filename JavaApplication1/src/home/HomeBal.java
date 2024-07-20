@@ -133,4 +133,29 @@ public class HomeBal {
         }
     }
     
+    // method for search
+    
+   public HomeBean searchTextField(String name){
+    HomeBean HomeBeanObj = null;
+    
+        try {
+            String query = "select * from home where firstName = "+name;
+            PreparedStatement ps = DB.con.prepareStatement(query);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+            int id = rs.getInt("id");//get element by column name
+            String firstName = rs.getString("firstName");
+            String lastName = rs.getString("lastName");
+            String gender = rs.getString("gender");
+            String city = rs.getString("city");
+            String age= rs.getString("age");
+            String address= rs.getString("address");
+            HomeBeanObj = new HomeBean(id, firstName, lastName, gender, city, age, address);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, ""+e);
+        }
+      return HomeBeanObj;
+    } 
+    
 }
