@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import dataBase.DB;
+import home.HomeFrame;
 import java.sql.PreparedStatement;
 
 /**
@@ -25,7 +26,12 @@ public class Bal {
             ps.setString(2, beanObj.getUserName());
             ps.setString(3, beanObj.getPass());
             ps.executeUpdate();
-            JOptionPane.showMessageDialog(null, "now you Signup you can go and login");
+            JOptionPane.showMessageDialog(null, "now you Signup you Enter to application");
+            HomeFrame homeobj = new HomeFrame();
+            signupFrame signupobj = new signupFrame();
+            signupobj.setVisible(false);
+            homeobj.setVisible(true);
+            
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, ""+e);
         }

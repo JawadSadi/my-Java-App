@@ -4,6 +4,8 @@
  */
 package login;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author hi
@@ -36,10 +38,10 @@ public class signupFrame extends javax.swing.JFrame {
         jSeparator8 = new javax.swing.JSeparator();
         jSeparator9 = new javax.swing.JSeparator();
         jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
+        jLabel1 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -70,15 +72,15 @@ public class signupFrame extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(0, 102, 153));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("jLabel1");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 50, -1));
-
         jLabel2.setFont(new java.awt.Font("Stencil", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Crud APPLICATION");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 300, 30));
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 300, 30));
         jPanel3.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 43, 270, 0));
-        jPanel3.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 43, 270, 10));
+        jPanel3.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 230, 10));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login/pngegg-3.png"))); // NOI18N
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 90, 90));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 120));
 
@@ -95,7 +97,7 @@ public class signupFrame extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Stencil", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 102, 204));
         jLabel4.setText("pASSWORD");
-        jPanel4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 110, -1));
+        jPanel4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 110, -1));
 
         jLabel5.setFont(new java.awt.Font("Stencil", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 102, 204));
@@ -105,7 +107,7 @@ public class signupFrame extends javax.swing.JFrame {
         jName.setFont(new java.awt.Font("Stencil", 1, 18)); // NOI18N
         jName.setForeground(new java.awt.Color(0, 51, 153));
         jName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 153)));
-        jPanel4.add(jName, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 320, 34));
+        jPanel4.add(jName, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 320, 30));
 
         jUserName.setFont(new java.awt.Font("Stencil", 1, 18)); // NOI18N
         jUserName.setForeground(new java.awt.Color(0, 51, 153));
@@ -121,7 +123,7 @@ public class signupFrame extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, 140, 30));
+        jPanel4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 170, 140, 30));
 
         jButton2.setBackground(new java.awt.Color(0, 102, 204));
         jButton2.setFont(new java.awt.Font("Stencil", 1, 24)); // NOI18N
@@ -132,11 +134,11 @@ public class signupFrame extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 140, 30));
+        jPanel4.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 140, 30));
 
         jPassword.setFont(new java.awt.Font("Stencil", 1, 24)); // NOI18N
         jPassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 204)));
-        jPanel4.add(jPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 112, 320, 30));
+        jPanel4.add(jPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 320, 30));
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 460, 220));
 
@@ -158,12 +160,16 @@ public class signupFrame extends javax.swing.JFrame {
         String fullName = jName.getText();
         String userN = jUserName.getText();
         String password = jPassword.getText();
+         if(fullName.equals("") || userN.equals("") || password.equals("")){
         
+             JOptionPane.showMessageDialog(null, "the inputs should not be empty");
+        }else{
         Bean beanObj = new Bean(fullName, userN, password);
         
      //crate bal class object
      Bal balObj = new Bal();
      balObj.insertDataSignup(beanObj);
+         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

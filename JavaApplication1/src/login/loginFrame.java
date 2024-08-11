@@ -6,6 +6,7 @@ package login;
 
 import home.HomeFrame;
 import java.awt.Toolkit;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -41,9 +42,9 @@ public class loginFrame extends javax.swing.JFrame {
         jSeparator6 = new javax.swing.JSeparator();
         jSeparator7 = new javax.swing.JSeparator();
         jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        jLabel1 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -72,15 +73,15 @@ public class loginFrame extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(0, 153, 153));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com_image/lock.png"))); // NOI18N
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 16, 70, 80));
-
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Crud APPLICATION");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 290, 30));
-        jPanel3.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 280, -1));
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 290, 30));
+        jPanel3.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 63, 220, 10));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login/pngegg (2).png"))); // NOI18N
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 100));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 120));
 
@@ -91,12 +92,12 @@ public class loginFrame extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Stencil", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 153, 153));
         jLabel3.setText("Password");
-        jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 110, 40));
+        jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 110, 40));
 
         jLabel4.setFont(new java.awt.Font("Stencil", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 153, 153));
         jLabel4.setText("User Name");
-        jPanel4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 50, -1, 40));
+        jPanel4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, 40));
 
         jUserName.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
         jUserName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)));
@@ -105,7 +106,7 @@ public class loginFrame extends javax.swing.JFrame {
                 jUserNameActionPerformed(evt);
             }
         });
-        jPanel4.add(jUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 300, 30));
+        jPanel4.add(jUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 300, 30));
 
         jPassword.setFont(new java.awt.Font("Stencil", 1, 18)); // NOI18N
         jPassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)));
@@ -114,7 +115,7 @@ public class loginFrame extends javax.swing.JFrame {
                 jPasswordActionPerformed(evt);
             }
         });
-        jPanel4.add(jPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 300, 30));
+        jPanel4.add(jPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 300, 30));
 
         jSignup.setBackground(new java.awt.Color(0, 153, 153));
         jSignup.setFont(new java.awt.Font("Stencil", 1, 18)); // NOI18N
@@ -125,7 +126,7 @@ public class loginFrame extends javax.swing.JFrame {
                 jSignupActionPerformed(evt);
             }
         });
-        jPanel4.add(jSignup, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 130, 30));
+        jPanel4.add(jSignup, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 130, 30));
 
         jLogin.setBackground(new java.awt.Color(0, 153, 153));
         jLogin.setFont(new java.awt.Font("Stencil", 1, 18)); // NOI18N
@@ -136,7 +137,7 @@ public class loginFrame extends javax.swing.JFrame {
                 jLoginActionPerformed(evt);
             }
         });
-        jPanel4.add(jLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 130, 30));
+        jPanel4.add(jLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 130, 30));
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 440, 210));
 
@@ -160,10 +161,15 @@ public class loginFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordActionPerformed
 
+    int counter = 0;
     private void jLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLoginActionPerformed
         // login for the employees;
         // get data feom inputs
-        
+        counter++;
+        if(counter == 4){
+            JOptionPane.showMessageDialog(null, "you try more than three time please try again later");
+        this.setVisible(false);
+        }else{
         String userName = jUserName.getText();
         String password = jPassword.getText();
         
@@ -178,7 +184,7 @@ public class loginFrame extends javax.swing.JFrame {
        }
       
  
-        
+        }
        
     }//GEN-LAST:event_jLoginActionPerformed
 

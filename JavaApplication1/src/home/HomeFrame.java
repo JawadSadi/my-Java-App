@@ -60,8 +60,8 @@ public class HomeFrame extends javax.swing.JFrame {
     
     public void clearTextFieldsData(){
     
-        jFname.setText("");
-        jLastName.setText("");
+        jFname1.setText("");
+        jLname.setText("");
         jAge.setText("");
         jAddress.setText("");
     
@@ -77,11 +77,11 @@ public class HomeFrame extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
         jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel9 = new javax.swing.JLabel();
         jFname = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -90,7 +90,6 @@ public class HomeFrame extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jAge = new javax.swing.JTextField();
-        jLastName = new javax.swing.JTextField();
         jCity = new javax.swing.JComboBox<>();
         jGender = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -99,7 +98,7 @@ public class HomeFrame extends javax.swing.JFrame {
         jUbdate = new javax.swing.JButton();
         jCleare = new javax.swing.JButton();
         jInsert = new javax.swing.JButton();
-        jLname1 = new javax.swing.JTextField();
+        jLname = new javax.swing.JTextField();
         jFname1 = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -116,27 +115,25 @@ public class HomeFrame extends javax.swing.JFrame {
         jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1270, -1));
         jPanel2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 23, 1270, 10));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 590, 1290, 60));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 590, 1290, 90));
 
         jPanel3.setBackground(new java.awt.Color(0, 153, 153));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("logs");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 31, 82, 62));
-
         jLabel2.setFont(new java.awt.Font("Stencil", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Search");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 40, 90, 30));
+        jLabel2.setText("Search:");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 60, 90, 30));
         jPanel3.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 240, 0));
 
         jLabel9.setFont(new java.awt.Font("Stencil", 1, 24)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("CRUD APPLICATION");
-        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 50, 300, 20));
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 300, 20));
 
-        jFname.setFont(new java.awt.Font("Stencil", 1, 14)); // NOI18N
+        jFname.setFont(new java.awt.Font("SimSun-ExtB", 1, 14)); // NOI18N
         jFname.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)));
+        jFname.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jFname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jFnameActionPerformed(evt);
@@ -150,7 +147,10 @@ public class HomeFrame extends javax.swing.JFrame {
                 jFnameKeyReleased(evt);
             }
         });
-        jPanel3.add(jFname, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 30, 320, 40));
+        jPanel3.add(jFname, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 60, 300, 30));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home/pngegg-4.png"))); // NOI18N
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 140, 110));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1290, 120));
 
@@ -180,19 +180,19 @@ public class HomeFrame extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Stencil", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 153, 153));
         jLabel6.setText("gender");
-        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 100, 30));
+        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 100, 30));
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Stencil", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 153, 153));
         jLabel7.setText("city");
-        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 100, 30));
+        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 100, 30));
 
         jLabel8.setBackground(new java.awt.Color(255, 255, 255));
         jLabel8.setFont(new java.awt.Font("Stencil", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 153, 153));
         jLabel8.setText("Age");
-        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 100, 30));
+        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 100, 30));
 
         jAge.setFont(new java.awt.Font("Stencil", 1, 14)); // NOI18N
         jAge.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)));
@@ -201,29 +201,20 @@ public class HomeFrame extends javax.swing.JFrame {
                 jAgeActionPerformed(evt);
             }
         });
-        jPanel4.add(jAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 360, 40));
-
-        jLastName.setFont(new java.awt.Font("Stencil", 1, 14)); // NOI18N
-        jLastName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)));
-        jLastName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jLastNameActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 360, 40));
+        jPanel4.add(jAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 360, 30));
 
         jCity.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jCity.setForeground(new java.awt.Color(0, 153, 153));
         jCity.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Herat", "Kabul", "Mazar", "Ghandahar", "Ghazni", "Balkh" }));
         jCity.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)));
-        jPanel4.add(jCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 360, 40));
+        jPanel4.add(jCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 360, 30));
 
         jGender.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jGender.setForeground(new java.awt.Color(0, 153, 153));
         jGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "male", "female" }));
         jGender.setToolTipText("");
         jGender.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)));
-        jPanel4.add(jGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 360, 40));
+        jPanel4.add(jGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 360, 30));
 
         jAddress.setColumns(20);
         jAddress.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
@@ -231,7 +222,7 @@ public class HomeFrame extends javax.swing.JFrame {
         jAddress.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)));
         jScrollPane1.setViewportView(jAddress);
 
-        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 360, 100));
+        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 360, 90));
 
         jDelete.setBackground(new java.awt.Color(0, 153, 153));
         jDelete.setFont(new java.awt.Font("Stencil", 1, 18)); // NOI18N
@@ -242,7 +233,7 @@ public class HomeFrame extends javax.swing.JFrame {
                 jDeleteActionPerformed(evt);
             }
         });
-        jPanel4.add(jDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 400, 160, 40));
+        jPanel4.add(jDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 390, 160, 40));
 
         jUbdate.setBackground(new java.awt.Color(0, 153, 153));
         jUbdate.setFont(new java.awt.Font("Stencil", 1, 18)); // NOI18N
@@ -253,7 +244,7 @@ public class HomeFrame extends javax.swing.JFrame {
                 jUbdateActionPerformed(evt);
             }
         });
-        jPanel4.add(jUbdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 350, 160, 40));
+        jPanel4.add(jUbdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 340, 160, 40));
 
         jCleare.setBackground(new java.awt.Color(0, 153, 153));
         jCleare.setFont(new java.awt.Font("Stencil", 1, 18)); // NOI18N
@@ -264,7 +255,7 @@ public class HomeFrame extends javax.swing.JFrame {
                 jCleareActionPerformed(evt);
             }
         });
-        jPanel4.add(jCleare, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 400, 160, 40));
+        jPanel4.add(jCleare, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 390, 160, 40));
 
         jInsert.setBackground(new java.awt.Color(0, 153, 153));
         jInsert.setFont(new java.awt.Font("Stencil", 1, 18)); // NOI18N
@@ -275,16 +266,16 @@ public class HomeFrame extends javax.swing.JFrame {
                 jInsertActionPerformed(evt);
             }
         });
-        jPanel4.add(jInsert, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 350, 160, 40));
+        jPanel4.add(jInsert, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 160, 40));
 
-        jLname1.setFont(new java.awt.Font("Stencil", 1, 14)); // NOI18N
-        jLname1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)));
-        jLname1.addActionListener(new java.awt.event.ActionListener() {
+        jLname.setFont(new java.awt.Font("Stencil", 1, 14)); // NOI18N
+        jLname.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)));
+        jLname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jLname1ActionPerformed(evt);
+                jLnameActionPerformed(evt);
             }
         });
-        jPanel4.add(jLname1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 360, 40));
+        jPanel4.add(jLname, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 360, 30));
 
         jFname1.setFont(new java.awt.Font("Stencil", 1, 14)); // NOI18N
         jFname1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)));
@@ -293,10 +284,11 @@ public class HomeFrame extends javax.swing.JFrame {
                 jFname1ActionPerformed(evt);
             }
         });
-        jPanel4.add(jFname1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 360, 40));
+        jPanel4.add(jFname1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 360, 30));
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 510, 450));
 
+        jTable1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
@@ -335,10 +327,6 @@ public class HomeFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jAgeActionPerformed
 
-    private void jLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLastNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLastNameActionPerformed
-
     private void jDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDeleteActionPerformed
         //call delete function
         HomeBal HomeBalObj = new HomeBal();
@@ -348,8 +336,8 @@ public class HomeFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jDeleteActionPerformed
 
     private void jUbdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUbdateActionPerformed
-        String firstname = jFname.getText();
-        String lastname = jLastName.getText();
+        String firstname = jFname1.getText();
+        String lastname = jLname.getText();
         String gender = (String) jGender.getSelectedItem();
         String city = (String) jCity.getSelectedItem();
         String age = jAge.getText();
@@ -372,14 +360,17 @@ public class HomeFrame extends javax.swing.JFrame {
         // getting the inputs values
         
         String firstname = jFname1.getText();
-        String lastname = jLastName.getText();
+        String lastname = jLname.getText();
         String gender = (String) jGender.getSelectedItem();
         String city = (String) jCity.getSelectedItem();
         String age = jAge.getText();
         String address = jAddress.getText();
         
         // object of HomeBean
+        if(firstname.equals("") || lastname.equals("") || age.equals("") || address.equals("")){
         
+             JOptionPane.showMessageDialog(null, "the inputs should not be empty");
+        }else{
         HomeBean HomeBeanObj = new HomeBean(0,firstname, lastname, gender, city, age, address);
     
         //create HomeBal Obj
@@ -390,11 +381,12 @@ public class HomeFrame extends javax.swing.JFrame {
         loadTable();
         
         clearTextFieldsData();
+        }
     }//GEN-LAST:event_jInsertActionPerformed
 
-    private void jLname1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLname1ActionPerformed
+    private void jLnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLnameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLname1ActionPerformed
+    }//GEN-LAST:event_jLnameActionPerformed
 
     int id = 0;// gloable id;
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
@@ -406,7 +398,7 @@ public class HomeFrame extends javax.swing.JFrame {
         HomeBal HomeBalObj = new HomeBal();
         HomeBean HomeBeanObj = HomeBalObj.returnDatTOTextField(id);// this method has return type
         jFname.setText(HomeBeanObj.getFirstName());
-        jLastName.setText(HomeBeanObj.getLastName());
+        jLname.setText(HomeBeanObj.getLastName());
         jGender.setSelectedItem(HomeBeanObj.getGender());
         jCity.setSelectedItem(HomeBeanObj.getCity());
         jAge.setText(HomeBeanObj.getAge());
@@ -488,8 +480,7 @@ public class HomeFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jLastName;
-    private javax.swing.JTextField jLname1;
+    private javax.swing.JTextField jLname;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

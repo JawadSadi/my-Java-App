@@ -8,6 +8,8 @@ import dataBase.DB;
 import login.loginFrame;
 import home.HomeFrame;
 
+
+
 /**
  *
  * @author hi
@@ -19,8 +21,7 @@ public class My_app {
         loginFrame loginObj = new loginFrame();
         loginObj.setVisible(true);
 
-          
-         DB.loadConnection();
+        DB.loadConnection();
 }
     
 }
